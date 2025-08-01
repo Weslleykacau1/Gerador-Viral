@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -42,7 +41,7 @@ import { nanoid } from 'nanoid';
 import { PromoBanner } from './promo-banner';
 import BentoGrid from './views/bento-grid-view';
 import { Button } from './ui/button';
-import { ChevronLeft } from 'lucide-react';
+import { Undo2 } from 'lucide-react';
 import { LoadingScreen } from './loading-screen';
 import { ImagePreviewModal } from './image-preview-modal';
 
@@ -1117,6 +1116,7 @@ export default function ScriptifyStudio() {
                         onGenerateThumbnailFromWebDoc={handleGenerateThumbnailFromWebDoc}
                         loadingThumbnailFromWebDoc={loadingStates.generatingThumbnailFromWebDoc}
                         generatedThumbnailFromWebDoc={generatedThumbnailFromWebDoc}
+                        isApiConfigured={isApiConfigured}
                         onGenerateImageForWebDoc={handleGenerateImageForWebDoc}
                         loadingWebDocImage={loadingStates.generatingWebDocImage}
                         onGenerateImageFromPastedScript={handleGenerateImageFromPastedScript}
@@ -1165,8 +1165,8 @@ export default function ScriptifyStudio() {
             <PromoBanner hasPurchased={hasPurchased} />
 
             {activeView !== 'bento' && (
-                <Button variant="ghost" onClick={() => setActiveView('bento')} className="mb-6">
-                    <ChevronLeft className="mr-2 h-4 w-4" />
+                 <Button variant="ghost" onClick={() => setActiveView('bento')} className="mb-6">
+                    <Undo2 className="mr-2 h-4 w-4" />
                     Voltar para o Início
                 </Button>
             )}
