@@ -3,7 +3,7 @@
 import type { Influencer } from '@/types';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { UploadCloud, FileText, Trash2, Palette, Plus, Sparkles, Download } from 'lucide-react';
+import { UploadCloud, FileText, Trash2, Palette, Plus, Download } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { convertJsonToCsv } from '@/lib/utils';
 import Image from 'next/image';
@@ -114,7 +114,7 @@ export default function InfluencerGalleryView({ influencers, onLoad, onDelete, o
                             <UploadCloud className="mr-2 h-4 w-4" /> Carregar
                         </Button>
                         <Button onClick={() => onQuickScene(gal.id!)} variant="outline" className="w-full">
-                            <Sparkles className="mr-2 h-4 w-4" /> Cena Rápida
+                            Cena Rápida
                         </Button>
                     </div>
                     <div className="flex w-full items-center justify-between">
