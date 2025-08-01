@@ -43,6 +43,7 @@ import BentoGrid from './views/bento-grid-view';
 import { Button } from './ui/button';
 import { LoadingScreen } from './loading-screen';
 import { ImagePreviewModal } from './image-preview-modal';
+import { Undo2 } from 'lucide-react';
 
 const getInitialInfluencerState = (): Influencer => ({ id: null, name: '', niche: '', personality: '', appearance: '', clothing: '', bio: '', uniqueTrait: '', negativePrompt: '', age: '', gender: '', accent: '', imagePreview: '', seed: Math.floor(Math.random() * 1000000) });
 const initialSceneState: Scene = { id: null, title: '', setting: '', action: '', dialogue: '', cameraAngle: 'Câmera Dinâmica (Criatividade da IA)', duration: '5 seg', videoFormat: '9:16 (Vertical)', productName: '', productBrand: '', productDescription: '', productImagePreview: '', productImageType: '', isPartnership: false, scenarioImagePreview: '', scenarioImageType: '', allowDigitalText: false, onlyPhysicalText: false, markdownScript: '' };
@@ -498,7 +499,7 @@ export default function ScriptifyStudio() {
     const handleGenerateThumbnailIdeas = async (mainImageDataUri: string, backgroundImageDataUri: string | undefined, videoTheme: string, thumbnailStyle: ThumbnailStyle) => {
         if (!isApiConfigured) return setIsLoginModalOpen(true);
         if (!mainImageDataUri || !videoTheme) {
-            return toast({ variant: 'destructive', title: "Informação em falta", description: "Por favor, carregue la imagem principal e preencha o tema do vídeo." });
+            return toast({ variant: 'destructive', title: "Informação em falta", description: "Por favor, carregue la imagen principal e preencha o tema do vídeo." });
         }
         
         setLoading('generatingThumbnail', true);
@@ -1088,6 +1089,7 @@ export default function ScriptifyStudio() {
                 />;
             case 'advancedTools':
                 return <AdvancedToolsView
+                        isApiConfigured={isApiConfigured}
                         influencers={galleryInfluencers}
                         scenes={scenes}
                         onGenerateLongScript={handleGenerateLongScript}
@@ -1115,7 +1117,6 @@ export default function ScriptifyStudio() {
                         onGenerateThumbnailFromWebDoc={handleGenerateThumbnailFromWebDoc}
                         loadingThumbnailFromWebDoc={loadingStates.generatingThumbnailFromWebDoc}
                         generatedThumbnailFromWebDoc={generatedThumbnailFromWebDoc}
-                        isApiConfigured={isApiConfigured}
                         onGenerateImageForWebDoc={handleGenerateImageForWebDoc}
                         loadingWebDocImage={loadingStates.generatingWebDocImage}
                         onGenerateImageFromPastedScript={handleGenerateImageFromPastedScript}
@@ -1161,6 +1162,15 @@ export default function ScriptifyStudio() {
 
             <AppHeader isApiConfigured={isApiConfigured} onOpenLoginModal={() => setIsLoginModalOpen(true)} />
             
+            {activeView !== 'bento' && (
+                <div className="mb-4">
+                    <Button variant="outline" onClick={() => setActiveView('bento')}>
+                        <Undo2 className="mr-2 h-4 w-4" />
+                        Voltar à Tela Inicial
+                    </Button>
+                </div>
+            )}
+
             <PromoBanner hasPurchased={hasPurchased} />
 
             <div className="w-full">
@@ -1169,3 +1179,5 @@ export default function ScriptifyStudio() {
         </div>
     );
 }
+
+    
