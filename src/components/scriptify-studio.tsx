@@ -41,7 +41,6 @@ import { nanoid } from 'nanoid';
 import { PromoBanner } from './promo-banner';
 import BentoGrid from './views/bento-grid-view';
 import { Button } from './ui/button';
-import { Undo2 } from 'lucide-react';
 import { LoadingScreen } from './loading-screen';
 import { ImagePreviewModal } from './image-preview-modal';
 
@@ -1163,13 +1162,6 @@ export default function ScriptifyStudio() {
             <AppHeader isApiConfigured={isApiConfigured} onOpenLoginModal={() => setIsLoginModalOpen(true)} />
             
             <PromoBanner hasPurchased={hasPurchased} />
-
-            {activeView !== 'bento' && (
-                 <Button variant="ghost" onClick={() => setActiveView('bento')} className="mb-6">
-                    <Undo2 className="mr-2 h-4 w-4" />
-                    Voltar para o Início
-                </Button>
-            )}
 
             <div className="w-full">
                 {renderContent()}
