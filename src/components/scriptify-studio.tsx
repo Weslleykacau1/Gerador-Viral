@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -1179,6 +1178,9 @@ export default function ScriptifyStudio() {
     );
 }
 
+<<<<<<< HEAD
     
 
+=======
+>>>>>>> b2ce129d1dbdaded8b98edcbd17d6d8411f767dd
     

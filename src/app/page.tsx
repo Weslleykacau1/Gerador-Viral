@@ -32,7 +32,11 @@ export default function Home() {
           className="inline-flex items-center gap-2 transition-colors hover:text-primary"
         >
           <Instagram className="h-4 w-4" />
+<<<<<<< HEAD
           Weslley Athila
+=======
+          By Weslley Athila
+>>>>>>> b2ce129d1dbdaded8b98edcbd17d6d8411f767dd
         </a>
       </footer>
     </main>
