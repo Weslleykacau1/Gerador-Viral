@@ -15,6 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export default function Home() {
+  
 
   return (
     <main
@@ -29,14 +30,8 @@ export default function Home() {
           href="https://www.instagram.com/weslleyathila/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 transition-colors hover:text-primary"
-        >
-          <Instagram className="h-4 w-4" />
-<<<<<<< HEAD
-          Weslley Athila
-=======
-          By Weslley Athila
->>>>>>> b2ce129d1dbdaded8b98edcbd17d6d8411f767dd
+          className="inline-flex items-center gap-2 transition-colors hover:text-primary">
+          <Instagram className="h-4 w-4" />By Weslley Athila
         </a>
       </footer>
     </main>
